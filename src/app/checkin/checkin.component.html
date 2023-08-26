@@ -1,0 +1,32 @@
+<h1>Checkin Book</h1>
+
+<div class="container">
+    <form (ngSubmit)="!checkoutForm.invalid && saveCheckin()" #checkoutForm="ngForm">
+        <fieldset class="form-group my-3">
+            <label for="book" class="form-label">Book Title</label>
+            <output id="book" name="book" class="form-control">{{borrowing.book.title}}</output>
+        </fieldset>
+
+        <fieldset class="form-group my-3">
+            <label for="reader" class="form-label">Reader</label>
+            <output id="reader" name="reader"
+                    class="form-control">{{borrowing.reader.firstName}} {{borrowing.reader.lastName}}</output>
+        </fieldset>
+
+        <fieldset class="form-group my-3">
+            <label for="checkoutDate" class="form-label">Checkout Date</label>
+            <output id="checkoutDate" name="checkoutDate"
+                    class="form-control">{{borrowing.checkoutDate | date}}</output>
+        </fieldset>
+
+        <fieldset class="form-group my-3">
+            <label for="checkinDate" class="form-label">Checkout Date</label>
+            <input type="date" id="checkinDate" name="checkinDate"
+                   [ngModel]="borrowing.checkinDate | date: 'yyyy-MM-dd'"
+                   (ngModelChange)="borrowing.checkinDate = $event" class="form-control"
+                   required>
+        </fieldset>
+
+        <button type="submit" class="btn btn-success" id="saveCheckin">Save</button>
+    </form>
+</div>

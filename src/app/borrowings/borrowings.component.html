@@ -1,0 +1,26 @@
+<h1>Borrowings</h1>
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Book Title</th>
+            <th>Checkout Date</th>
+            <th>Checkin Date</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let borrowing of borrowings">
+            <td>{{borrowing.book.title}}</td>
+            <td>{{borrowing.checkoutDate | date}}</td>
+            <td>{{borrowing.checkinDate | date}}</td>
+            <td>
+                <button (click)="checkinBook(borrowing.id)" class="btn btn-success" [disabled]="borrowing.checkinDate">
+                    Checkin Book
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

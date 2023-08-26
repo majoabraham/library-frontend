@@ -1,0 +1,40 @@
+<h1>Books</h1>
+
+<div>
+    <button (click)="addBook()" class="btn btn-success">Add Book</button>
+</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Is Available?</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.available}}</td>
+            <td>
+                <button (click)="updateBook(book.id)" class="btn btn-warning">Edit</button>
+            </td>
+            <td>
+                <button (click)="checkoutBook(book.id)" class="btn btn-success" [disabled]="!book.available">Check Out
+                </button>
+            </td>
+            <td>
+                <button (click)="showReader(book.id)" class="btn btn-info" [disabled]="book.available">Show Reader
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

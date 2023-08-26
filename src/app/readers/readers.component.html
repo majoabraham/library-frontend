@@ -1,0 +1,36 @@
+<h1>Readers</h1>
+
+<div>
+    <button (click)="addReader()" class="btn btn-success">Add Reader</button>
+</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID Card</th>
+            <th>Birth Date</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reader of readers">
+            <td>{{reader.id}}</td>
+            <td>{{reader.firstName}}</td>
+            <td>{{reader.lastName}}</td>
+            <td>{{reader.idCard}}</td>
+            <td>{{reader.birthDate | date}}</td>
+            <td>
+                <button (click)="updateReader(reader.id)" class="btn btn-warning">Edit</button>
+            </td>
+            <td>
+                <button (click)="showCheckouts(reader.id)" class="btn btn-info">Show Checkouts</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
