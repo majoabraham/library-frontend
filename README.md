@@ -8,6 +8,7 @@ The application contains 3 agendas:
 2. List of all readers with information on name, surname, ID number and date of birth.
 3. List of loans and returns of individual books to readers, while the flag is updated as to whether the book is borrowed.
 
-4. Two agendas - list of books, list of readers with forms for adding and editing a record
-5. Functionality for borrowing and returning the book
-6. A function that displays the reader who has a book on loan
+The user interface includes:
+1. Two agendas - list of books, list of readers with forms for adding and editing a record
+2. Functionality for borrowing and returning the book
+3. A function that displays the reader who has a book on loan
